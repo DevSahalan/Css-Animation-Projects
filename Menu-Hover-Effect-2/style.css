@@ -1,0 +1,66 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.nav {
+  margin-top: 5rem;
+  display: flex;
+  border: 1px solid green;
+}
+
+.nav li {
+  list-style-type: none;
+}
+.nav li a {
+  text-decoration: none;
+  position: relative;
+  padding: 10px 15px;
+  margin: 0 10px;
+  transition: all 0.4s;
+  border: 1px solid green;
+  font-size: 20px;
+}
+.nav li a:hover {
+  background-color: red;
+  color: white;
+  /* font-weight: 700; */
+}
+.nav li a::before {
+  position: absolute;
+  content: '';
+  bottom: 10px;
+  left: 10px;
+  width: 18px;
+  height: 18px;
+  opacity: 0;
+  transition: all 0.4s;
+  border: 3px solid red;
+  border-width: 0 0 3px 3px;
+}
+.nav li a::after {
+  position: absolute;
+  content: '';
+  top: 10px;
+  right: 10px;
+  width: 18px;
+  opacity: 0;
+  height: 18px;
+  border: 3px solid red;
+  border-width: 3px 3px 0 0;
+  transition: all 0.4s;
+}
+.nav li a:hover::before {
+  bottom: -8px;
+  left: -8px;
+  opacity: 1;
+}
+
+.nav li a:hover::after {
+  top: -8px;
+  right: -8px;
+  opacity: 1;
+}
